@@ -1,0 +1,24 @@
+org: richardq26
+app: aws-lambda-api
+service: aws-lambda-api
+
+frameworkVersion: '2'
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  stage: dev
+  profile: deploy-aws
+  lambdaHashingVersion: 20201221
+  region: sa-east-1
+
+
+functions:
+  hello:
+    handler: handler.hello
+    events: 
+    - http: 
+        path: /helloWorld
+        method: get
+      
+
